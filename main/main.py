@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def task1():
@@ -78,7 +79,27 @@ def task3():
     print("Modified array with top-left 2x2 subarray set to 0:\n", array)
 
 
+def task4():
+    """
+    Create an array x containing 100 evenly distributed values from 0 to 2π using np.linspace.
+    Calculate the sine and cosine values for all elements of the array x.
+    Plot graphs for sine and cosine on the same graph.
+    Add a title, axis labels, and legend to differentiate your graphs.
+    """
+    x = np.linspace(0, 2*np.pi, 100)
+    x_sin = np.sin(x)
+    x_cos = np.cos(x)
+    plt.plot(x, x_sin, label='sin(x)')
+    plt.plot(x, x_cos, label='cos(x)')
+    plt.title('Sin and Cosine on the same graph')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.legend()
+    plt.show()
+
+
 if __name__ == '__main__':
     task1()
     task2()
     task3()
+    task4()
